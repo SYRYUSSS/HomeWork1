@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 public class Program
 {
     //Дано трехзначное число. Обнулить в нем разряд десятков.
@@ -85,6 +86,27 @@ public class Program
         }
         return (countmod, count);
     }
+    // Описать перечислимый тип Seasons (времена года). Создать метод, который по номеру месяца [1..12] возвращает время года.
+    public static string Task7(int k)
+    {
+        switch (k)
+        {
+            case 1: return "Зима";
+            case 2: return "Зима";
+            case 3: return "Весна";
+            case 4: return "Весна";
+            case 5: return "Весна";
+            case 6: return "Лето";
+            case 7: return "Лето";
+            case 8: return "Лето";
+            case 9: return "Осень";
+            case 10: return "Осень";
+            case 11: return "Осень";
+            case 12: return "Зима";
+            default: return "нет столько месяцев";
+        }
+
+    }
     public static void Main(string[]args)
     {
         Console.WriteLine("Task 1");
@@ -112,8 +134,10 @@ public class Program
                 Console.WriteLine("Ошибка: введите целое число.");
             }
         }
-
+        int a = int.Parse(Console.ReadLine());
         Console.WriteLine("Task 6");
         Console.WriteLine(Task6(4, numbers));
+        Console.WriteLine("Task 7");
+        Console.WriteLine(Task7(a));
     }
 }
