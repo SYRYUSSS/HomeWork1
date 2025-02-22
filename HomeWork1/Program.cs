@@ -107,6 +107,18 @@ public class Program
         }
 
     }
+    //Описать метод, выводящий на консоль N строк "Месяц №<номер месяца>, его сезон: <сезон для этого месяца>". Номера месяцев генерируются случайно.
+    public static void Task8(int N)
+    {
+        Random random = new Random();
+
+        for (int i = 0; i < N; i++)
+        {
+            int monthNumber = random.Next(1, 13);
+            string season = Task7(monthNumber);
+            Console.WriteLine($"Месяц №{monthNumber}, его сезон: {season}");
+        }
+    }
     public static void Main(string[]args)
     {
         Console.WriteLine("Task 1");
@@ -135,9 +147,12 @@ public class Program
             }
         }
         int a = int.Parse(Console.ReadLine());
+        int b = int.Parse(Console.ReadLine());
         Console.WriteLine("Task 6");
         Console.WriteLine(Task6(4, numbers));
         Console.WriteLine("Task 7");
         Console.WriteLine(Task7(a));
+        Console.WriteLine("Task 8");
+        Task8(b);
     }
 }
