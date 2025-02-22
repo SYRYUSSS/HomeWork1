@@ -47,7 +47,13 @@ public class Program
             return 2;
         if (d < 0)
             return 0;
-
+    }
+    public static double Task4(double x1,double x2)
+    {
+        if (x1 < x2)
+            return x1;
+        else
+            return x2;
     }
     public static void Main(string[]args)
     {
@@ -57,5 +63,7 @@ public class Program
         Console.WriteLine(Task2(4,5));
         Console.WriteLine("Task 3");
         Console.WriteLine(Task3( 3, 4,5));
+        Console.WriteLine("Task 4");
+        Console.WriteLine(Task4(3,5));
     }
 }
