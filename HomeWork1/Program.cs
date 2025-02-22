@@ -48,12 +48,24 @@ public class Program
         if (d < 0)
             return 0;
     }
+    //Создать функцию, которая возвращает минимум из двух переданных вещественных чисел. 
     public static double Task4(double x1,double x2)
     {
         if (x1 < x2)
             return x1;
         else
             return x2;
+    }
+    //Даны целые числа A и B. Найти произведение всех чётных целых чисел от A до B включительно.
+    public static double Task5(int a,int b)
+    {
+        double prod = 1;
+        for (int i=a;i<=b;i++)
+        {
+            if (i % 2 == 0)
+                prod *= i;
+        }
+        return prod;
     }
     public static void Main(string[]args)
     {
@@ -65,5 +77,7 @@ public class Program
         Console.WriteLine(Task3( 3, 4,5));
         Console.WriteLine("Task 4");
         Console.WriteLine(Task4(3,5));
+        Console.WriteLine("Task 5");
+        Console.WriteLine(Task5(3, 9));
     }
 }
