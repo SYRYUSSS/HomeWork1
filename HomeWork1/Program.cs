@@ -67,6 +67,24 @@ public class Program
         }
         return prod;
     }
+    //Дано целое число K и набор ненулевых целых чисел; признак его завершения — число 0.
+    //Вычислить количество чисел в наборе, меньших K, а также количество чисел, делящихся на K нацело.
+    public static (int,int) Task6(int k, List<int> numbers)
+    {
+        int count = 0;
+        int countmod = 0;
+        foreach (int i in numbers)
+        {
+            if (k < i)
+            {
+                count += 1;   
+            }
+            if (k % i == 0)
+                countmod += 1;
+           
+        }
+        return (countmod, count);
+    }
     public static void Main(string[]args)
     {
         Console.WriteLine("Task 1");
@@ -79,5 +97,23 @@ public class Program
         Console.WriteLine(Task4(3,5));
         Console.WriteLine("Task 5");
         Console.WriteLine(Task5(3, 9));
+        List<int> numbers = new List<int>();
+        while (true)
+        {
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out int number))
+            {
+                if (number == 0)
+                    break;
+                numbers.Add(number);
+            }
+            else
+            {
+                Console.WriteLine("Ошибка: введите целое число.");
+            }
+        }
+
+        Console.WriteLine("Task 6");
+        Console.WriteLine(Task6(4, numbers));
     }
 }
